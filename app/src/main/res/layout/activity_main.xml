@@ -28,6 +28,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:text="@string/titulo_login"
+        android:textColor="#554E4E"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,6 +45,9 @@
         android:ems="10"
         android:hint="@string/edtcorreo"
         android:inputType="textEmailAddress"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +62,9 @@
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:hint="@string/edtcontraseña"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
         android:inputType="textPassword"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,27 +72,30 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLoginEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
-        android:background="@color/white"
+        android:background="@drawable/btn_white"
         android:text="@string/btnlogin"
+        android:textColor="@color/primaryBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnLoginRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:text="@string/btnRegistro"
+        android:background="@drawable/btn_rounded_white"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginEmail" />
 </androidx.constraintlayout.widget.ConstraintLayout>

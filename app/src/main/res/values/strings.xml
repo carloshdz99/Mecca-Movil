@@ -3,6 +3,7 @@
 
     <!-- strings titulos -->
     <string name="titulo_login">Inicio de Sesión</string>
+    <string name="titulo_registro">Registrar Cuenta</string>
 
     <!-- strings descripcion imagenes -->
     <string name="descripcion_logo">Logo Multiclinicas</string>
