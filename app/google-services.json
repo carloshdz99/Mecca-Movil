@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "701993499231",
+    "project_id": "mecca-movil-e3640",
+    "storage_bucket": "mecca-movil-e3640.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701993499231:android:f2c30ca2183570c454f9ea",
+        "android_client_info": {
+          "package_name": "com.multiclinicas.meccamovil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701993499231-3asd89otphaabu4k4506qlosq4nn8hss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxUuvToD34t71WxmRgGy-pmHUwm7Q1c-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701993499231-3asd89otphaabu4k4506qlosq4nn8hss.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
