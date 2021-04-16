@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        //empieza autenticación con Google, enviando el usuario autenticado a Firebase
         if(requestCode == gSignIn) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
@@ -89,6 +89,7 @@ public class RegisterActivity extends AppCompatActivity {
         googleBtn = findViewById(R.id.googleButton);
     }
 
+    //Método cuando se le da clic al boton de iniciar sesion con google
     public void googleSesion(View view) {
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
