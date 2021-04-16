@@ -9,7 +9,7 @@
     <string name="descripcion_logo">Logo Multiclinicas</string>
 
     <!-- strings para botones -->
-    <string name="btnlogin">Inicar Sesión</string>
+    <string name="btnlogin">Iniciar Sesión</string>
     <string name="btnRegistro">Registrarse</string>
 
     <!-- Strings campos de texto -->

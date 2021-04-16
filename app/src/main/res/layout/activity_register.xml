@@ -80,7 +80,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"/>
+
 
     <EditText
         android:id="@+id/editPasswordRegister"
@@ -99,5 +100,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEmailRegister" />
+
+    <Button
+        android:id="@+id/googleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/purple_200"
+        android:text="Iniciar Sesión con Google"
+        android:onClick="googleSesion"
+        android:textColor="@color/black"
+        app:icon="@drawable/googleg_standard_color_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegisterLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
