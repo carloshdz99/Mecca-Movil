@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     //etiqueta de mensajes en consola
@@ -69,6 +70,19 @@ public class MainActivity extends AppCompatActivity {
         edtPassword = findViewById(R.id.editPasswordLogin);
     }
 
+    //validando que exista un usuario logueado
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null){
+            Intent i = new Intent(MainActivity.this, DashboardActivity.class);
+            startActivity(i);
+        }
+    }
+
     //metodo para inicio de sesion con correo y contraseña
     private void LoginEmailandPassword(){
         String email, password;
@@ -91,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(getApplicationContext(), "te has logueado", Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(MainActivity.this, DashboardActivity.class);
+                            startActivity(i);
                         }else {
                             Log.w(TAG, "login fallido ", task.getException());
                             Toast.makeText(getApplicationContext(), "el login ha fallado", Toast.LENGTH_LONG).show();
