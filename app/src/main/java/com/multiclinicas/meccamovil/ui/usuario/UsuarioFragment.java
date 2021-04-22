@@ -48,7 +48,7 @@ public class UsuarioFragment extends Fragment {
         View root = inflater.inflate(R.layout.usuario_fragment, container, false);
 
         //tomando el txt de correo
-        TvUsuarioEmail = root.findViewById(R.id.UsuarioEmailTV);
+       /* TvUsuarioEmail = root.findViewById(R.id.UsuarioEmailTV);
         //tomando el txt de nombre de usuario
         TvUsuarioName = root.findViewById(R.id.UsuarioNameTv);
         //tomando el input de texto
@@ -60,7 +60,7 @@ public class UsuarioFragment extends Fragment {
             public void onClick(View v) {
                 updateName();
             }
-        });
+        });*/
         return root;
     }
 
