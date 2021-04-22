@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/home"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_gallery"
@@ -16,10 +16,21 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/logout"
-            android:icon="@drawable/sign_out"
-            android:onClick="Logout"
-            android:title="@string/cerrar_sesion" />
     </group>
+
+    <!-- seccion de usuario y cerrar sesion -->
+    <item android:title="@string/submenu_config">
+        <menu>
+            <item
+                android:id="@+id/usuarioFragment"
+                android:icon="@drawable/profile"
+                android:title="@string/profile_title"/>
+
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/sign_out"
+                android:onClick="Logout"
+                android:title="@string/cerrar_sesion" />
+        </menu>
+    </item>
 </menu>
