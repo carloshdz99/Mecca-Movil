@@ -17,4 +17,13 @@
     <style name="splahsScreenTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/splashscreen</item>
     </style>
+
+    <style name="Theme.MeccaMovil.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.MeccaMovil.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.MeccaMovil.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

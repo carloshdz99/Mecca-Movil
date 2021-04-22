@@ -4,6 +4,8 @@
     <!-- strings titulos -->
     <string name="titulo_login">Inicio de Sesión</string>
     <string name="titulo_registro">Registrar Cuenta</string>
+    <string name="correo_usuario">Correo:</string>
+    <string name="pantalla_inicio">Bienvenido:</string>
 
     <!-- strings descripcion imagenes -->
     <string name="descripcion_logo">Logo Multiclinicas</string>
@@ -11,8 +13,31 @@
     <!-- strings para botones -->
     <string name="btnlogin">Iniciar Sesión</string>
     <string name="btnRegistro">Registrarse</string>
+    <string name="btnActualizar">Actualizar</string>
 
     <!-- Strings campos de texto -->
     <string name="edtcorreo">Correo:</string>
     <string name="edtcontraseña">Contraseña:</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Multiclinica</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--opciones del menu-->
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_profile">Perfil de Usuario</string>
+    <string name="cerrar_sesion">Cerrar Sesion</string>
+
+    <!-- strings de fragments -->
+    <string name="profile_title">Perfil de Usuario</string>
+    <string name="label_usuario">Perfil</string>
+    <string name="label_nombre_perfil">Nombre:</string>
+
+    <!-- strings submenus -->
+    <string name="submenu_config">Configuraciones</string>
 </resources>
