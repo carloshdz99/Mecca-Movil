@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
@@ -35,11 +38,14 @@ public class UsuarioFragment extends Fragment {
     }*/
 
     //txt mostrando el usuario logueado
-    private TextView TvUsuarioEmail, TvUsuarioName;
+    private TextView TvUsuarioEmail;
     //tomando campos de texto del fragment
-    private EditText edtNombreUsuario;
+    private EditText edtNombreUsuario, edtContraseñaUsuario, edtContraseñaUsuarioAntigua;
     //tomando botones del fragment
-    private Button btnActualizarNombre;
+    private Button btnActualizarNombre, btnActualizarContraseña, btnCancelUpdate, btnVsLtPass;
+
+    //tomando el layout vertical oculto
+    private View ltUpdatePassword;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -48,19 +54,47 @@ public class UsuarioFragment extends Fragment {
         View root = inflater.inflate(R.layout.usuario_fragment, container, false);
 
         //tomando el txt de correo
-       /* TvUsuarioEmail = root.findViewById(R.id.UsuarioEmailTV);
-        //tomando el txt de nombre de usuario
-        TvUsuarioName = root.findViewById(R.id.UsuarioNameTv);
+        TvUsuarioEmail = root.findViewById(R.id.UsuarioEmailTV);
         //tomando el input de texto
         edtNombreUsuario = root.findViewById(R.id.edtNameUsuario);
-        //tomando boton
+        //tomando el input de contraseña
+        edtContraseñaUsuario = root.findViewById(R.id.edtContraseñaUsuarioPut);
+        edtContraseñaUsuarioAntigua = root.findViewById(R.id.edtContraseñaUsuarioAntiguaPut);
+        //tomando boton para actualizar nombre
         btnActualizarNombre = root.findViewById(R.id.btnActualizarNombre);
         btnActualizarNombre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 updateName();
             }
-        });*/
+        });
+
+        //tomando boton para actualizar contraseña
+        btnActualizarContraseña = root.findViewById(R.id.btnUpdatePassword);
+        btnActualizarContraseña.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UpdatePassword();
+            }
+        });
+        //tomando el layout que muestra los campos para actualizar contraseña
+        ltUpdatePassword = root.findViewById(R.id.ltUpdatePass);
+        //tomando boton para cancelar actualizacion y ocultar el layout
+        btnCancelUpdate = root.findViewById(R.id.btnCancelUpdate);
+        btnCancelUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ltUpdatePassword.setVisibility(View.INVISIBLE);
+            }
+        });
+        //tomando el boton que pone visible el layout para contraseña
+        btnVsLtPass = root.findViewById(R.id.btnVsltPass);
+        btnVsLtPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ltUpdatePassword.setVisibility(View.VISIBLE);
+            }
+        });
         return root;
     }
 
@@ -71,7 +105,7 @@ public class UsuarioFragment extends Fragment {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null){
             TvUsuarioEmail.setText(user.getEmail());
-            TvUsuarioName.setText(user.getDisplayName());
+            edtNombreUsuario.setText(user.getDisplayName());
         }
     }
 
@@ -99,6 +133,41 @@ public class UsuarioFragment extends Fragment {
                         }
                     }
                 });
+    }
+
+    //metodo para actualizar contraseña
+    private void UpdatePassword(){
+        String contraseñanueva, contraseñaantigua;
+        contraseñanueva = edtContraseñaUsuario.getText().toString();
+        contraseñaantigua = edtContraseñaUsuarioAntigua.getText().toString();
+
+        //tomando el usuario en sesion actual
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        //reatutenticando el usuario para que no de error al cambiar contraseña
+        AuthCredential credential = EmailAuthProvider.getCredential(user.getEmail(), contraseñaantigua);
+        user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Log.d(TAG, "Usuario reautenticado");
+                }else {
+                    Log.w(TAG, "error al reautenticar: " + task.getException());
+                }
+            }
+        });
+
+        //despues de reautenticar el usuario cambiamos la contraseña
+        user.updatePassword(contraseñanueva).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Log.d(TAG, "contraseña cambiada");
+                }else {
+                    Log.w(TAG, "error al actualizar contraseña: " + task.getException());
+                }
+            }
+        });
     }
 
     @Override
