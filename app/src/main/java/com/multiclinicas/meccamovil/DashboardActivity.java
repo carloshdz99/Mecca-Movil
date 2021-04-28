@@ -51,11 +51,7 @@ public class DashboardActivity extends AppCompatActivity {
         View hview = navigationView.getHeaderView(0);
         txtEmailUser = hview.findViewById(R.id.txtEmailUser);
         //tomando el usuario actual
-        //instanciamos firebase
         mAuth = FirebaseAuth.getInstance();
-        //tomamos el usuario
-        currentUser = mAuth.getCurrentUser();
-        txtEmailUser.setText(currentUser.getEmail());
     }
 
     @Override
@@ -80,6 +76,8 @@ public class DashboardActivity extends AppCompatActivity {
         if (user == null){
             Intent i = new Intent(DashboardActivity.this, MainActivity.class);
             startActivity(i);
+        }else {
+            txtEmailUser.setText(user.getEmail());
         }
     }
 
