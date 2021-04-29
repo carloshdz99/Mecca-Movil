@@ -39,8 +39,8 @@
 
     <!--opciones del menu-->
     <string name="menu_home">Inicio</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_gallery">Pacientes</string>
+    <string name="menu_slideshow">Citas</string>
     <string name="menu_profile">Perfil de Usuario</string>
     <string name="cerrar_sesion">Cerrar Sesion</string>
 
