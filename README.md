@@ -2,9 +2,9 @@
 **************************************
 
 ## Miembros del grupo 
-* Kevin Nelson Torres Landaverde
-* Christian Josué Landaverde Flores
-* Carlos Josué Hernández Funes
+* Kevin Nelson Torres Landaverde 02T
+* Christian Josué Landaverde Flores 02T
+* Carlos Josué Hernández Funes 02T
 
 ## Mockups de diseño
 [Diseños hechos en figma](https://www.figma.com/file/RHCG5mBdzYNhu97ZSGMKG3/MECCA-Movil?node-id=0%3A1)
