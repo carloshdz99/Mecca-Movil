@@ -34,7 +34,7 @@ import java.util.Map;
 
 public class SlideshowFragment extends Fragment{
 
-    private static final String TAG = "Firestore";
+        private static final String TAG = "Firestore";
     private SlideshowViewModel slideshowViewModel;
 
     private Button btnprueba;

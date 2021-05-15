@@ -40,6 +40,7 @@
     <string name="Recomendaciones_cita">Diagnostico:</string>
     <string name="registrar_cita">Registrar cita</string>
     <string name="seleccione_paciente">Seleccion un paciente</string>
+    <string name="nombre_fecha">Citas: Nombre - Fecha</string>
 
 
     <!--opciones del menu-->
