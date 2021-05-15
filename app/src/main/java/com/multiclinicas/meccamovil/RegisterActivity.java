@@ -117,6 +117,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+                                        Intent i = new Intent(RegisterActivity.this, DashboardActivity.class);
+                                        startActivity(i);
                                         Toast.makeText(getApplicationContext(), "Se registró con Google", Toast.LENGTH_LONG).show();
                                     }else{
                                         Toast.makeText(getApplicationContext(), "Ocurrió un error", Toast.LENGTH_LONG).show();

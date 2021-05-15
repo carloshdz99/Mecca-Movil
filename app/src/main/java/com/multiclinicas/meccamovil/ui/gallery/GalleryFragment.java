@@ -1,6 +1,7 @@
 package com.multiclinicas.meccamovil.ui.gallery;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,6 +62,26 @@ public class GalleryFragment extends Fragment {
     }
 
     public void NuevoPaciente(){
+
+        //validando que no vayan campos vacios
+        if(TextUtils.isEmpty(etNombrePaciente.getText().toString())){
+            Toast.makeText(getContext(),"No se permiten campos vacios", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(TextUtils.isEmpty(etApellidoPaciente.getText().toString())){
+            Toast.makeText(getContext(),"No se permiten campos vacios", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(TextUtils.isEmpty(etTelefonoPaciente.getText().toString())){
+            Toast.makeText(getContext(),"No se permiten campos vacios", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(TextUtils.isEmpty(etPrescripcion.getText().toString())){
+            Toast.makeText(getContext(),"No se permiten campos vacios", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+
         Map<String, Object> paciente = new HashMap<>();
         paciente.put("nombre_paciente", etNombrePaciente.getText().toString());
         paciente.put("apellido_paciente", etApellidoPaciente.getText().toString());

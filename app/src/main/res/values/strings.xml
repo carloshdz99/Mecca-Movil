@@ -8,6 +8,7 @@
     <string name="pantalla_inicio">Bienvenido:</string>
     <string name="actualizar_contraseña">Actualizar contraseña</string>
     <string name="pantalla_pacientes">Registro de pacientes</string>
+    <string name="registro_citas">Registro de citas</string>
 
     <!-- strings descripcion imagenes -->
     <string name="descripcion_logo">Logo Multiclinicas</string>
@@ -35,6 +36,10 @@
     <string name="apellido_paciente">Apellido</string>
     <string name="telefono_paciente">Telefono</string>
     <string name="prescripcion_paciente">Prescripcion medica</string>
+    <string name="fecha_cita">Fecha:</string>
+    <string name="Recomendaciones_cita">Diagnostico:</string>
+    <string name="registrar_cita">Registrar cita</string>
+    <string name="seleccione_paciente">Seleccion un paciente</string>
 
 
     <!--opciones del menu-->
